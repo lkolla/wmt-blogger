@@ -1,0 +1,22 @@
+{
+  "name": "wmt-blogger",
+  "version": "1.0.0",
+  "description": "Blogger site with basic functionalities.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lkolla/wmt-blogger.git"
+  },
+  "keywords": [
+    "blogger"
+  ],
+  "author": "Rajesh Kolla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lkolla/wmt-blogger/issues"
+  },
+  "homepage": "https://github.com/lkolla/wmt-blogger#readme"
+}
