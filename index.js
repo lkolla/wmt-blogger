@@ -6,19 +6,23 @@ let bodyParser = require('body-parser')
 let passport = require('passport')
 let session = require('express-session')
 let cookieParser = require('cookie-parser')
-let LocalStrategy = require('passport-local').LocalStrategy
 let nodeifyit = require('nodeifyit')
 let flash = require('connect-flash')
 
 //Modules
 let routes = require('./routes')
-let loginStrategy = require('./middleware/login-strategy')
+let localStrategy = require('./middleware/local-strategy')
 
 
 const HTTP_PORT = process.env.NODE_HTTP_PORT
 const ENV = process.env.DROPBOX_ENV
 
 let app = express()
+
+if(ENV === 'development'){
+	app.use(morgan('dev'))
+}
+
 app.passport = passport
 
 //setting the views
@@ -45,7 +49,7 @@ app.use(passport.session())
 //adding flash middleware.
 app.use(flash())
 
-loginStrategy(app)
+localStrategy(app)
 
 routes(app)
 
