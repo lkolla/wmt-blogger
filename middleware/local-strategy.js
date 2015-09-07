@@ -1,7 +1,8 @@
 let User = require('../models/profile')
 let nodeifyit = require('nodeifyit')
 let LocalStrategy = require('passport-local').Strategy
-
+let util = require('util')
+let validator = require('validator')
 
 module.exports = (app) => {
 
@@ -17,14 +18,24 @@ module.exports = (app) => {
 	passport.use(new LocalStrategy(
 		nodeifyit( async (username, password) => {
 
-			let user = await User.promise.findOne({username})
+			username = (username || '').toLowerCase()
 
-			if(!user || username !== user.username){
-				return [false, {message: 'Invalid User Name'}]
+			if(!validator.isAlphanumeric(username)){
+				return [false, {message: 'only alphabets and numbers are allowed for user name'}]
 			}
 
-			if(!user || password !== user.password){
-				return [false, {message: 'Invalid password.'}]
+			let user = null
+
+			if(validator.isEmail(username)){
+				console.log('inside email logic')
+				user = await User.promise.findOne({email: username, password: password})
+			}else{
+				console.log('inside username logic')
+				user = await User.promise.findOne({username:username, password: password})
+			}
+			
+			if(!user){
+				return [false, {message: 'Invalid user name / password'}]
 			}
 
 			return user
@@ -33,33 +44,40 @@ module.exports = (app) => {
 
 	//user registration.
 	passport.use('local-signup', new LocalStrategy(
-		nodeifyit(async(username, password, email, firstname, lastname) => {
+		{failureFlash:true, passReqToCallback:true},
+		nodeifyit(async(req, username, password) => {
 
-			console.log('inside local-signup')
+			let{email, firstname, lastname, title, description} = req.body
 
 			username = (username || '').toLowerCase()
 
-			console.log(`sername name ${username}`)
+			let registeredUser = await User.promise.findOne({username:username})
 
-			let registeredUser = await User.promise.findOne({username})
-
-			console.log(`registeredUser ${registeredUser}`)
+			//checking if an user exists with email?
+			if(!registeredUser){
+				registeredUser = await User.promise.findOne({email:email})
+			}
 
 			if(registeredUser){
-				return [false, {message: 'User already exist.'}]
+				return [false, {message: 'User name / email already exist'}]
 			}
 
 			let user = new User()
 
-			user.username = username
+			user.username = username.toLowerCase()
 			user.password = password
-			user.email = email
-			user.firstName = firstname
-			user.lastName = lastname
+			user.email = email.toLowerCase()
+			user.firstname = firstname
+			user.lastname = lastname
+			user.blogtitle = title
+			user.blogdescription = description
 
-
-			return await user.save()
-
+			try{
+				return await user.save()	
+			}catch(e){
+				console.log(util.inspect(e))
+				return [false, {message: e.message}]
+			}
 		}, {spread: true})))
 		
 

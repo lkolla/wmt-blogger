@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Authenticator</title>
+    <title>Walmart - Blogger, Sign Up</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <style>
@@ -14,7 +14,7 @@
 
 <div class="col-sm-6 col-sm-offset-3">
 
-    <h1><span class="fa fa-sign-in"></span> Login</h1>
+    <h1><span class="fa fa-sign-in"></span> Walmat - Blogger, Sign Up</h1>
 
     <% if (typeof message !== 'undefined' && message.length > 0) { %>
         <div class="alert alert-danger"><%= message %></div>
@@ -22,7 +22,7 @@
 
     <!-- LOGIN FORM -->
     <form id="signupForm" method="post">
-        
+        <h3> Required </h3>
         <div class="form-group">
             <label>User Name</label>
             <input type="text" class="form-control" name="username">
@@ -47,10 +47,24 @@
             <input type="text" class="form-control" name="lastname">
         </div>
 
-        <button type="submit" class="btn btn-warning btn-lg" name="signup" onclick="submitForm('/adduser')">Signup</button>
+        <hr>
+
+        <h3> Optional </h3>
+        <div class="form-group">
+            <label>Blog Title</label>
+            <input type="text" class="form-control" name="title">
+        </div>
+        <div class="form-group">
+            <label>Blog Description</label>
+            <input type="text" class="form-control" name="description">
+        </div>
+        
+        <button type="submit" class="btn btn-warning btn-lg" name="signup" onclick="submitForm('/signup')">Sign Up</button>
     </form>
 
     <hr>
+
+     <p>Already have an account? <a href="/login">Login</a></p>
 
 </div>
 </div>

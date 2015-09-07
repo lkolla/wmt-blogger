@@ -8,6 +8,8 @@ let session = require('express-session')
 let cookieParser = require('cookie-parser')
 let nodeifyit = require('nodeifyit')
 let flash = require('connect-flash')
+let mongoose = require('mongoose')
+
 
 //Modules
 let routes = require('./routes')
@@ -52,6 +54,9 @@ app.use(flash())
 localStrategy(app)
 
 routes(app)
+
+mongoose.connect('mongodb://localhost:27017/wmt-blogger')
+
 
 app.listen(HTTP_PORT, ()=>{
 	console.log(`Blogger server running in ${ENV}`)
