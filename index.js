@@ -55,7 +55,7 @@ localStrategy(app)
 
 routes(app)
 
-mongoose.connect('mongodb://localhost:27017/wmt-blog')
+mongoose.connect('mongodb://localhost:27017/wmt-blogger')
 
 
 app.listen(HTTP_PORT, ()=>{
