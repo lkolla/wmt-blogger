@@ -10,14 +10,17 @@ module.exports = {
 			console.log('inside addPost')
 			console.log(req.body.title, req.body.content, req.body.image)
 
-			let post = new Post()
-			post.title = req.body.title
-			post.content = req.body.content
-			post.image = req.body.image
+			let blogPost = new Post()
+
+			blogPost.title = req.body.title
+			blogPost.content = req.body.content
+			blogPost.image = req.body.image
+
+			console.log(blogPost)
 
 			try{
 				console.log('before')
-				return await post.save()	
+				return await blogPost.save()	
 				console.log('after')
 			}catch(e){
 				console.log(util.inspect(e))
