@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+    <title>Walmart - Blogger, Blogger Details</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <style>
+        body         { padding-top:80px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="col-sm-6 col-sm-offset-3">
+
+    <h1><span class="fa fa-sign-in"></span><%= blog.title %></h1>
+
+    <% if (typeof message !== 'undefined' && message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+    <% } %>
+
+        <div class="form-group">
+            <label>Blog Title</label>
+            <label><%= blog.title %></label>
+        </div>
+        
+        <div class="form-group">
+            <label>Blog description</label>
+            <label><%= blog.description %></label>
+        </div>
+
+        <div class="form-group">
+            <label>Created By</label>
+            <label><%= blogCreator.firstname %></label>
+        </div>
+
+    <hr>
+
+    <p>Back to <a href="/profile">home</a></p>
+
+</div>
+</div>
+<script>
+    function submitForm(action)
+    {   
+        document.getElementById('postForm').action = action
+        document.getElementById('postForm').submit()
+    }
+</script>
+</body>
+</html>

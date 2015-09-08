@@ -1,6 +1,6 @@
 // following module holds all the http routes
 
-let PostOperations = require('./middleware/post-operations')
+let Operations = require('./middleware/operations')
 
 module.exports = (app) => {
 
@@ -36,13 +36,42 @@ app.post('/signup',  passport.authenticate('local-signup', {
 
 app.get('/blogpost',  (req, res) => {
 	res.render('post.ejs', {message:req.flash('error')})
-}) // '/signup' route end.
+}) // '/blogpost' route end.
 
-app.post('/blogpost', PostOperations.addPost,  (req, res) => {
-	res.render('post.ejs', {message:req.flash('error')})
-}) // '/signup' route end.
+app.post('/blogpost', Operations.addPost, (req, res) => {
 
-app.get('/profile', (req, res) => {
+	res.render('post.ejs', {
+
+		message:req.flash('error')
+	})
+
+}) // '/blogpost' route end.
+
+app.get('/createblog',  (req, res) => {
+	res.render('createblog.ejs', {
+		user:req.user,
+		message:req.flash('error')
+	})
+}) // '/createblog' route end.
+
+app.post('/createblog', Operations.addBlog,  (req, res) => {
+
+	console.log(req.blogId)
+
+	res.redirect(`/blog/${req.blogId}`);
+}) // '/createblog' route end.
+
+app.get('/blog/:blogId', Operations.findBlog,  (req, res) => {
+	res.render('blogdetails.ejs', {
+		user:req.user,
+		blogCreator:req.blogCreator,
+		blog:req.blog,
+		message:req.flash('error')
+	})
+}) // '/createblog' route end.
+
+
+app.get('/profile',  (req, res) => {
 	res.render('profile.ejs', {
 		user:req.user,
 		message:req.flash('error')

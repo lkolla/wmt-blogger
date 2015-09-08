@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <title>Walmart - Blogger, Blog Creation</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <style>
+        body         { padding-top:80px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="col-sm-6 col-sm-offset-3">
+
+    <h1><span class="fa fa-sign-in"></span>Blog</h1>
+
+    <% if (typeof message !== 'undefined' && message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+    <% } %>
+
+    <!-- LOGIN FORM -->
+    <form id="blogForm" method="post">
+        <h3> Required </h3>
+        <div class="form-group">
+            <label>Blog's Title</label>
+            <input type="text" class="form-control" name="title">
+        </div>
+        
+        <div class="form-group">
+            <label>Blog's description</label>
+            <input type="text" class="form-control" name="description">
+        </div>
+
+
+        <input type="hidden" name="userId" value="<%=user._id%>">
+
+
+        <button type="submit" class="btn btn-warning btn-lg" name="post" onclick="submitForm('/createblog')">Create Blog</button>
+    </form>
+
+    <hr>
+
+    <p>Back to <a href="/profile">home</a></p>
+
+</div>
+</div>
+<script>
+    function submitForm(action)
+    {   
+        document.getElementById('blogForm').action = action
+        document.getElementById('blogForm').submit()
+    }
+</script>
+</body>
+</html>
