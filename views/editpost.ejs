@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Walmart - Blogger, Post</title>
+    <title>Walmart - Blogger, Edit Post</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <style>
@@ -14,34 +14,34 @@
 
 <div class="col-sm-6 col-sm-offset-3">
 
-    <h1><span class="fa fa-sign-in"></span>Post</h1>
+    <h1><span class="fa fa-sign-in"></span>Edit Post</h1>
 
     <% if (typeof message !== 'undefined' && message.length > 0) { %>
         <div class="alert alert-danger"><%= message %></div>
     <% } %>
 
     <!-- LOGIN FORM -->
-    <form id="postForm" method="post">
+    <form id="postForm" method="post" action="/editpost/<%=post._id%>">
         <h3> Required </h3>
         <div class="form-group">
             <label>Title</label>
-            <input type="text" class="form-control" name="title">
+            <input type="text" class="form-control" name="title" value="<%= post.title%>">
         </div>
         
         <div class="form-group">
             <label>Content</label>
-            <input type="text" class="form-control" name="content">
+            <input type="text" class="form-control" name="content" value="<%= post.content%>">
         </div>
 
         <div class="form-group">
             <label>Image</label>
-            <input type="text" name="image" class="form-control">
+            <input type="text" name="image" class="form-control" value="<%= post.image%>">
         </div>
 
         <input type="hidden" name="userId" value="<%=user._id%>">
 
 
-        <button type="submit" class="btn btn-warning btn-lg" name="post" onclick="submitForm('/blogpost')">Post</button>
+        <button type="submit" class="btn btn-warning btn-lg" name="post" onclick="submitForm()">Post</button>
     </form>
 
     <hr>
@@ -51,9 +51,9 @@
 </div>
 </div>
 <script>
-    function submitForm(action)
+    function submitForm()
     {   
-        document.getElementById('postForm').action = action
+        //document.getElementById('postForm').action = action
         document.getElementById('postForm').submit()
     }
 </script>

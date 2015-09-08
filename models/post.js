@@ -15,6 +15,10 @@ let PostSchema = mongoose.Schema({
 	type:String,
 	required:true	
 	},
+	userId: {
+	type:String,
+	required:true	
+	},	
 	createdDate: { type: Date, default: Date.now },
 	updatedDate: { type: Date, default: Date.now }
 })

@@ -35,17 +35,33 @@ app.post('/signup',  passport.authenticate('local-signup', {
 })) // '/adduser' route end.
 
 app.get('/blogpost',  (req, res) => {
-	res.render('post.ejs', {message:req.flash('error')})
+	res.render('post.ejs', {
+		user:req.user,
+		message:req.flash('error')})
 }) // '/blogpost' route end.
+
 
 app.post('/blogpost', Operations.addPost, (req, res) => {
 
-	res.render('post.ejs', {
-
-		message:req.flash('error')
-	})
+	res.redirect(`/profile`);
 
 }) // '/blogpost' route end.
+
+app.get('/editpost/:postId', Operations.findPost, (req, res) => {
+
+	res.render('editpost.ejs', {
+		user:req.user,
+		post:req.post,
+		message:req.flash('error')})
+
+}) // '/blogpost' route end.
+
+app.post('/editpost/:postId', Operations.savePost, (req, res) => {
+
+	res.redirect(`/profile`);
+
+}) // '/blogpost' route end.
+
 
 app.get('/createblog',  (req, res) => {
 	res.render('createblog.ejs', {
@@ -71,9 +87,11 @@ app.get('/blog/:blogId', Operations.findBlog,  (req, res) => {
 }) // '/createblog' route end.
 
 
-app.get('/profile',  (req, res) => {
+app.get('/profile', Operations.findBlogsAndPosts, (req, res) => {
 	res.render('profile.ejs', {
 		user:req.user,
+		blogs:req.blogs,
+		posts:req.posts,
 		message:req.flash('error')
 	})
 })

@@ -16,11 +16,12 @@ module.exports = {
 			blogPost.title = req.body.title
 			blogPost.content = req.body.content
 			blogPost.image = req.body.image
+			blogPost.userId = req.body.userId
 
 			console.log(blogPost)
 
 			try{
-				blogPost.save()	
+				blogPost.save(console.log('post saved'))	
 			}catch(e){
 				console.log(util.inspect(e))
 			}
@@ -68,6 +69,51 @@ module.exports = {
 
 		}().catch(next)
 
-	}	
+	},
+	findPost: (req, res, next) => {
+
+		async () =>{
+
+			console.log(req.params.postId)
+
+			req.post = await Post.promise.findById(req.params.postId)
+
+			next()
+
+		}().catch(next)
+
+	},
+	savePost: (req, res, next) => {
+
+		async () =>{
+
+			let blogPost = await Post.promise.findById(req.params.postId)
+
+			blogPost.title = req.body.title
+			blogPost.content = req.body.content
+			blogPost.image = req.body.image
+			blogPost.userId = req.body.userId
+
+			await blogPost.save(console.log('post saved'))	
+
+			next()
+
+		}().catch(next)
+
+	},
+	findBlogsAndPosts: (req, res, next) => {
+
+		async () =>{
+
+			req.blogs = await Blog.promise.find({userId:req.user._id})
+			//console.log(req.blogs)
+			req.posts = await Post.promise.find({userId:req.user._id})
+			//console.log(req.blogs)
+
+			next()
+
+		}().catch(next)
+
+	}		
 
 }
