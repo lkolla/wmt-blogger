@@ -5,36 +5,44 @@ let Comment = require('../models/comment')
 let nodeifyit = require('nodeifyit')
 let util = require('util')
 let validator = require('validator')
+let multiparty = require('multiparty')
+let fs = require('fs')
+let DataUri = require('datauri')
 
 module.exports = {
 
 	addPost: (req, res, next) => {
 			
-			console.log(req.body.title, req.body.content, req.body.image)
+			async () =>{
 
 			let blogPost = new Post()
 
-			blogPost.title = req.body.title
-			blogPost.content = req.body.content
-			blogPost.image = req.body.image
-			blogPost.userId = req.body.userId
-			blogPost.blogId = req.body.blogId
+			
 
+			let [{title:[title], content: [content], userId:[userId], blogId:[blogId]},
+			   {image: [file]}] = await new multiparty.Form().promise.parse(req)
+
+			blogPost.title = title
+			blogPost.content = content
+			blogPost.image.data = await fs.promise.readFile(file.path)
+			blogPost.image.contentType = file.headers['content-type']
+			blogPost.userId = userId
+			blogPost.blogId = blogId
+
+			//blogPost.image = req.body.image
+			
 
 			console.log(blogPost)
-
 			try{
-				blogPost.save(console.log('post saved'))	
-			}catch(e){
+            	await blogPost.save()
+            }catch(e){
 				console.log(util.inspect(e))
 			}
+            console.log('post saved')	
 
 			next()
+			}().catch(next)
 		},
-	modifyPost:(req, res, next) => {
-			
-				next()
-	},
 	addBlog: (req, res, next) => {
 
 			console.log(req.body.title, req.body.description, req.body.userId)
@@ -98,6 +106,12 @@ module.exports = {
 			console.log(req.params.postId)
 
 			req.post = await Post.promise.findById(req.params.postId)
+			
+			let dataUri = new DataUri()
+			let image = dataUri.format('.'+req.post.image.contentType.split('/').pop(), req.post.image.data)
+
+			req.image = `data:${req.post.image.contentType};base64, ${image.base64}`
+
 
 			req.comments = await Comment.promise.find({postId:req.params.postId})
 
@@ -127,7 +141,7 @@ module.exports = {
 
 			blogPost.title = req.body.title
 			blogPost.content = req.body.content
-			blogPost.image = req.body.image
+			//blogPost.image = req.body.image
 			blogPost.userId = req.body.userId
 
 			await blogPost.save(console.log('post saved'))	

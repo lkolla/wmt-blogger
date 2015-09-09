@@ -54,6 +54,7 @@ app.get('/editpost/:postId', Operations.findPost, (req, res) => {
 		user:req.user,
 		post:req.post,
 		comments:req.comments,
+		image:req.image,
 		message:req.flash('error')})
 
 }) // '/blogpost' route end.

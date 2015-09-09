@@ -10,7 +10,6 @@ let nodeifyit = require('nodeifyit')
 let flash = require('connect-flash')
 let mongoose = require('mongoose')
 
-
 //Modules
 let routes = require('./routes')
 let localStrategy = require('./middleware/local-strategy')
@@ -21,9 +20,11 @@ const ENV = process.env.DROPBOX_ENV
 
 let app = express()
 
+
 if(ENV === 'development'){
 	app.use(morgan('dev'))
 }
+
 
 app.passport = passport
 

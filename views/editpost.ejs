@@ -22,7 +22,6 @@
 
     <!-- LOGIN FORM -->
     <form id="postForm" method="post" action="/editpost/<%=post._id%>">
-        <h3> Required </h3>
         <div class="form-group">
             <label>Title</label>
             <input type="text" class="form-control" name="title" value="<%= post.title%>">
@@ -35,8 +34,9 @@
 
         <div class="form-group">
             <label>Image</label>
-            <input type="text" name="image" class="form-control" value="<%= post.image%>">
+            <img src="<%= image%>" />
         </div>
+
 
         <input type="hidden" name="userId" value="<%=user._id%>">
 
@@ -62,7 +62,6 @@
     <hr>
 
     <form id="commentForm" method="post" action="/addcomment">
-        <h3> Required </h3>
         <div class="form-group">
             <label>Comments</label>
             <input type="text" class="form-control" name="comments">
