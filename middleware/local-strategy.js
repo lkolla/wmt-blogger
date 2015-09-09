@@ -20,9 +20,7 @@ module.exports = (app) => {
 
 			username = (username || '').toLowerCase()
 
-			if(!validator.isAlphanumeric(username)){
-				return [false, {message: 'only alphabets and numbers are allowed for user name'}]
-			}
+			
 
 			let user = null
 
@@ -31,6 +29,11 @@ module.exports = (app) => {
 				user = await User.promise.findOne({email: username, password: password})
 			}else{
 				console.log('inside username logic')
+				
+				if(!validator.isAlphanumeric(username)){
+					return [false, {message: 'only alphabets and numbers are allowed for user name'}]
+				}
+
 				user = await User.promise.findOne({username:username, password: password})
 			}
 			

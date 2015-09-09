@@ -32,7 +32,7 @@ module.exports = {
 			//blogPost.image = req.body.image
 			
 
-			console.log(blogPost)
+			//console.log(blogPost)
 			try{
             	await blogPost.save()
             }catch(e){
@@ -53,7 +53,7 @@ module.exports = {
 			blog.description = req.body.description
 			blog.userId = req.body.userId
 
-			console.log(blog)
+			//console.log(blog)
 
 			try{
 				blog.save(console.log('blog created'))	
