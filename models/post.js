@@ -19,6 +19,10 @@ let PostSchema = mongoose.Schema({
 	type:String,
 	required:true	
 	},	
+	blogId: {
+	type:String,
+	required:true	
+	},	
 	createdDate: { type: Date, default: Date.now },
 	updatedDate: { type: Date, default: Date.now }
 })

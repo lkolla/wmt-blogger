@@ -1,6 +1,7 @@
 let Post = require('../models/post')
 let Blog = require('../models/blog')
 let User = require('../models/profile')
+let Comment = require('../models/comment')
 let nodeifyit = require('nodeifyit')
 let util = require('util')
 let validator = require('validator')
@@ -17,6 +18,8 @@ module.exports = {
 			blogPost.content = req.body.content
 			blogPost.image = req.body.image
 			blogPost.userId = req.body.userId
+			blogPost.blogId = req.body.blogId
+
 
 			console.log(blogPost)
 
@@ -61,6 +64,7 @@ module.exports = {
 
 			let blog = await Blog.promise.findById(req.params.blogId)
 			let user = await User.promise.findById(blog.userId)
+			req.posts = await Post.promise.find({blogId:req.params.blogId})
 
 			req.blog = blog
 			req.blogCreator = user
@@ -70,6 +74,23 @@ module.exports = {
 		}().catch(next)
 
 	},
+	addComment: (req, res, next) => {
+
+		async () =>{
+
+			
+			let comment = new Comment()
+
+			comment.comments = req.body.comments
+			comment.userId = req.body.userId
+			comment.postId = req.body.postId
+			await comment.save()
+
+			next()
+
+		}().catch(next)
+
+	},	
 	findPost: (req, res, next) => {
 
 		async () =>{
@@ -78,6 +99,21 @@ module.exports = {
 
 			req.post = await Post.promise.findById(req.params.postId)
 
+			req.comments = await Comment.promise.find({postId:req.params.postId})
+
+			next()
+
+		}().catch(next)
+
+	},
+	deletePost: (req, res, next) => {
+
+		async () =>{
+
+			console.log(req.params.postId)
+
+			await Post.promise.findByIdAndRemove({ _id: req.params.postId})
+			
 			next()
 
 		}().catch(next)
@@ -108,6 +144,8 @@ module.exports = {
 			req.blogs = await Blog.promise.find({userId:req.user._id})
 			//console.log(req.blogs)
 			req.posts = await Post.promise.find({userId:req.user._id})
+			//console.log(req.blogs)
+			req.comments = await Comment.promise.find({userId:req.user._id})
 			//console.log(req.blogs)
 
 			next()

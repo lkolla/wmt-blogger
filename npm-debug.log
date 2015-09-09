@@ -1,0 +1,573 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/lkolla/.nvm/versions/io.js/v3.1.0/bin/iojs',
+1 verbose cli   '/Users/lkolla/.nvm/versions/io.js/v3.1.0/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'bcrypt' ]
+2 info using npm@2.14.0
+3 info using node@v3.1.0
+4 verbose install initial load of /work/nodejs/wmt-blogger/package.json
+5 verbose installManyTop reading scoped package data from /work/nodejs/wmt-blogger/node_modules/body-parser/package.json
+6 verbose installManyTop reading scoped package data from /work/nodejs/wmt-blogger/node_modules/connect-flash/package.json
+7 verbose installManyTop reading scoped package data from /work/nodejs/wmt-blogger/node_modules/cookie-parser/package.json
+8 verbose installManyTop reading scoped package data from /work/nodejs/wmt-blogger/node_modules/ejs/package.json
+9 verbose installManyTop reading scoped package data from /work/nodejs/wmt-blogger/node_modules/express/package.json
+10 verbose installManyTop reading scoped package data from /work/nodejs/wmt-blogger/node_modules/express-session/package.json
+11 verbose installManyTop reading scoped package data from /work/nodejs/wmt-blogger/node_modules/module/package.json
+12 verbose installManyTop reading scoped package data from /work/nodejs/wmt-blogger/node_modules/mongoose/package.json
+13 verbose installManyTop reading scoped package data from /work/nodejs/wmt-blogger/node_modules/morgan/package.json
+14 verbose installManyTop reading scoped package data from /work/nodejs/wmt-blogger/node_modules/nodeifyit/package.json
+15 verbose installManyTop reading scoped package data from /work/nodejs/wmt-blogger/node_modules/passport/package.json
+16 verbose installManyTop reading scoped package data from /work/nodejs/wmt-blogger/node_modules/passport-local/package.json
+17 verbose installManyTop reading scoped package data from /work/nodejs/wmt-blogger/node_modules/songbird/package.json
+18 verbose installManyTop reading scoped package data from /work/nodejs/wmt-blogger/node_modules/util/package.json
+19 verbose installManyTop reading scoped package data from /work/nodejs/wmt-blogger/node_modules/validator/package.json
+20 info package.json passport-local@1.0.0 No license field.
+21 info package.json songbird@1.0.1 No license field.
+22 info package.json module@0.0.1 No README data
+23 info package.json module@0.0.1 No license field.
+24 info package.json util@0.10.3 util is also the name of a node core module.
+25 info package.json connect-flash@0.1.1 No license field.
+26 verbose readDependencies loading dependencies from /work/nodejs/wmt-blogger/package.json
+27 silly cache add args [ 'bcrypt', null ]
+28 verbose cache add spec bcrypt
+29 silly cache add parsed spec Result {
+29 silly cache add   raw: 'bcrypt',
+29 silly cache add   scope: null,
+29 silly cache add   name: 'bcrypt',
+29 silly cache add   rawSpec: '',
+29 silly cache add   spec: '*',
+29 silly cache add   type: 'range' }
+30 silly addNamed bcrypt@*
+31 verbose addNamed "*" is a valid semver range for bcrypt
+32 silly addNameRange { name: 'bcrypt', range: '*', hasData: false }
+33 silly mapToRegistry name bcrypt
+34 silly mapToRegistry using default registry
+35 silly mapToRegistry registry https://registry.npmjs.org/
+36 silly mapToRegistry uri https://registry.npmjs.org/bcrypt
+37 verbose addNameRange registry:https://registry.npmjs.org/bcrypt not in flight; fetching
+38 verbose request uri https://registry.npmjs.org/bcrypt
+39 verbose request no auth needed
+40 info attempt registry request try #1 at 8:16:00 PM
+41 verbose request id 32ac3a9bfcf9d55d
+42 verbose etag "2C7LDBBGIK4O4C33GJYZ76R8V"
+43 http request GET https://registry.npmjs.org/bcrypt
+44 http 200 https://registry.npmjs.org/bcrypt
+45 silly get cb [ 200,
+45 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+45 silly get     etag: '"EQLHVU8VYX09U5LQUIBMUMF4C"',
+45 silly get     'content-type': 'application/json',
+45 silly get     'cache-control': 'max-age=60',
+45 silly get     'content-length': '74096',
+45 silly get     'accept-ranges': 'bytes',
+45 silly get     date: 'Wed, 09 Sep 2015 03:16:00 GMT',
+45 silly get     via: '1.1 varnish',
+45 silly get     age: '0',
+45 silly get     connection: 'keep-alive',
+45 silly get     'x-served-by': 'cache-lax1430-LAX',
+45 silly get     'x-cache': 'HIT',
+45 silly get     'x-cache-hits': '1',
+45 silly get     'x-timer': 'S1441768560.723813,VS0,VE199',
+45 silly get     vary: 'Accept' } ]
+46 verbose get saving bcrypt to /Users/lkolla/.npm/registry.npmjs.org/bcrypt/.cache.json
+47 silly addNameRange number 2 { name: 'bcrypt', range: '*', hasData: true }
+48 silly addNameRange versions [ 'bcrypt',
+48 silly addNameRange   [ '0.1.2',
+48 silly addNameRange     '0.2.0',
+48 silly addNameRange     '0.2.1',
+48 silly addNameRange     '0.1.3',
+48 silly addNameRange     '0.2.2',
+48 silly addNameRange     '0.2.3',
+48 silly addNameRange     '0.2.4',
+48 silly addNameRange     '0.3.0',
+48 silly addNameRange     '0.3.1',
+48 silly addNameRange     '0.3.2',
+48 silly addNameRange     '0.4.0',
+48 silly addNameRange     '0.4.1',
+48 silly addNameRange     '0.5.0',
+48 silly addNameRange     '0.6.0',
+48 silly addNameRange     '0.7.0',
+48 silly addNameRange     '0.7.1',
+48 silly addNameRange     '0.7.2',
+48 silly addNameRange     '0.7.3',
+48 silly addNameRange     '0.7.4',
+48 silly addNameRange     '0.7.5',
+48 silly addNameRange     '0.7.6',
+48 silly addNameRange     '0.7.7',
+48 silly addNameRange     '0.7.8',
+48 silly addNameRange     '0.8.0',
+48 silly addNameRange     '0.8.1',
+48 silly addNameRange     '0.8.2',
+48 silly addNameRange     '0.8.3',
+48 silly addNameRange     '0.8.4',
+48 silly addNameRange     '0.8.5' ] ]
+49 silly addNamed bcrypt@0.8.5
+50 verbose addNamed "0.8.5" is a plain semver version for bcrypt
+51 silly cache afterAdd bcrypt@0.8.5
+52 verbose afterAdd /Users/lkolla/.npm/bcrypt/0.8.5/package/package.json not in flight; writing
+53 verbose afterAdd /Users/lkolla/.npm/bcrypt/0.8.5/package/package.json written
+54 silly install resolved [ { name: 'bcrypt',
+54 silly install resolved     description: 'A bcrypt library for NodeJS.',
+54 silly install resolved     keywords:
+54 silly install resolved      [ 'bcrypt',
+54 silly install resolved        'password',
+54 silly install resolved        'auth',
+54 silly install resolved        'authentication',
+54 silly install resolved        'encryption',
+54 silly install resolved        'crypt',
+54 silly install resolved        'crypto' ],
+54 silly install resolved     main: './bcrypt',
+54 silly install resolved     version: '0.8.5',
+54 silly install resolved     author: { name: 'Nick Campbell', url: 'https://github.com/ncb000gt' },
+54 silly install resolved     engines: { node: '>= 0.6.0' },
+54 silly install resolved     repository:
+54 silly install resolved      { type: 'git',
+54 silly install resolved        url: 'git+https://github.com/ncb000gt/node.bcrypt.js.git' },
+54 silly install resolved     license: 'MIT',
+54 silly install resolved     bugs: { url: 'https://github.com/ncb000gt/node.bcrypt.js/issues' },
+54 silly install resolved     scripts:
+54 silly install resolved      { test: 'node-gyp configure build && nodeunit test',
+54 silly install resolved        install: 'node-gyp rebuild' },
+54 silly install resolved     dependencies: { bindings: '1.2.1', nan: '2.0.5' },
+54 silly install resolved     devDependencies: { nodeunit: '~0.9.1' },
+54 silly install resolved     contributors:
+54 silly install resolved      [ [Object],
+54 silly install resolved        [Object],
+54 silly install resolved        [Object],
+54 silly install resolved        [Object],
+54 silly install resolved        [Object],
+54 silly install resolved        [Object],
+54 silly install resolved        [Object],
+54 silly install resolved        [Object],
+54 silly install resolved        [Object],
+54 silly install resolved        [Object],
+54 silly install resolved        [Object],
+54 silly install resolved        [Object],
+54 silly install resolved        [Object],
+54 silly install resolved        [Object] ],
+54 silly install resolved     gypfile: true,
+54 silly install resolved     gitHead: '5d97708f06754d7d7989c67ba867002d10013615',
+54 silly install resolved     homepage: 'https://github.com/ncb000gt/node.bcrypt.js#readme',
+54 silly install resolved     _id: 'bcrypt@0.8.5',
+54 silly install resolved     _shasum: '8e5b81b4db80e944f440005979ca8d58a961861d',
+54 silly install resolved     _from: 'bcrypt@*',
+54 silly install resolved     _npmVersion: '2.13.3',
+54 silly install resolved     _nodeVersion: '3.0.0',
+54 silly install resolved     _npmUser: { name: 'defunctzombie', email: 'shtylman@gmail.com' },
+54 silly install resolved     dist:
+54 silly install resolved      { shasum: '8e5b81b4db80e944f440005979ca8d58a961861d',
+54 silly install resolved        tarball: 'http://registry.npmjs.org/bcrypt/-/bcrypt-0.8.5.tgz' },
+54 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object] ],
+54 silly install resolved     directories: {},
+54 silly install resolved     _resolved: 'https://registry.npmjs.org/bcrypt/-/bcrypt-0.8.5.tgz',
+54 silly install resolved     readme: 'ERROR: No README data found!' } ]
+55 info install bcrypt@0.8.5 into /work/nodejs/wmt-blogger
+56 info installOne bcrypt@0.8.5
+57 verbose installOne of bcrypt to /work/nodejs/wmt-blogger not in flight; installing
+58 verbose lock using /Users/lkolla/.npm/_locks/bcrypt-9bc8369980b84b5b.lock for /work/nodejs/wmt-blogger/node_modules/bcrypt
+59 silly install write writing bcrypt 0.8.5 to /work/nodejs/wmt-blogger/node_modules/bcrypt
+60 verbose unbuild node_modules/bcrypt
+61 silly gentlyRm /work/nodejs/wmt-blogger/node_modules/bcrypt is being purged from base /work/nodejs/wmt-blogger
+62 verbose gentlyRm don't care about contents; nuking /work/nodejs/wmt-blogger/node_modules/bcrypt
+63 verbose tar unpack /Users/lkolla/.npm/bcrypt/0.8.5/package.tgz
+64 verbose tar unpacking to /work/nodejs/wmt-blogger/node_modules/bcrypt
+65 silly gentlyRm /work/nodejs/wmt-blogger/node_modules/bcrypt is being purged
+66 verbose gentlyRm don't care about contents; nuking /work/nodejs/wmt-blogger/node_modules/bcrypt
+67 silly gunzTarPerm modes [ '755', '644' ]
+68 silly gunzTarPerm extractEntry package.json
+69 silly gunzTarPerm extractEntry .npmignore
+70 silly gunzTarPerm extractEntry README.md
+71 silly gunzTarPerm extractEntry LICENSE
+72 silly gunzTarPerm extractEntry bcrypt.js
+73 silly gunzTarPerm extractEntry binding.gyp
+74 silly gunzTarPerm extractEntry .travis.yml
+75 silly gunzTarPerm extractEntry CHANGELOG.md
+76 silly gunzTarPerm extractEntry examples/async_compare.js
+77 silly gunzTarPerm extractEntry examples/forever_gen_salt.js
+78 silly gunzTarPerm extractEntry test/async.js
+79 silly gunzTarPerm extractEntry test/repetitions.js
+80 silly gunzTarPerm extractEntry test/sync.js
+81 silly gunzTarPerm extractEntry Makefile
+82 silly gunzTarPerm extractEntry src/bcrypt.cc
+83 silly gunzTarPerm extractEntry src/bcrypt_node.cc
+84 silly gunzTarPerm extractEntry src/blowfish.cc
+85 silly gunzTarPerm extractEntry src/node_blf.h
+86 silly gunzTarPerm extractEntry werker.yml
+87 verbose write writing to /work/nodejs/wmt-blogger/node_modules/bcrypt/package.json
+88 info preinstall bcrypt@0.8.5
+89 verbose readDependencies loading dependencies from /work/nodejs/wmt-blogger/node_modules/bcrypt/package.json
+90 silly prepareForInstallMany adding bindings@1.2.1 from bcrypt dependencies
+91 silly prepareForInstallMany adding nan@2.0.5 from bcrypt dependencies
+92 verbose readDependencies loading dependencies from /work/nodejs/wmt-blogger/node_modules/bcrypt/package.json
+93 silly cache add args [ 'bindings@1.2.1', null ]
+94 verbose cache add spec bindings@1.2.1
+95 silly cache add args [ 'nan@2.0.5', null ]
+96 verbose cache add spec nan@2.0.5
+97 silly cache add parsed spec Result {
+97 silly cache add   raw: 'bindings@1.2.1',
+97 silly cache add   scope: null,
+97 silly cache add   name: 'bindings',
+97 silly cache add   rawSpec: '1.2.1',
+97 silly cache add   spec: '1.2.1',
+97 silly cache add   type: 'version' }
+98 silly addNamed bindings@1.2.1
+99 verbose addNamed "1.2.1" is a plain semver version for bindings
+100 silly mapToRegistry name bindings
+101 silly mapToRegistry using default registry
+102 silly mapToRegistry registry https://registry.npmjs.org/
+103 silly mapToRegistry uri https://registry.npmjs.org/bindings
+104 verbose addNameVersion registry:https://registry.npmjs.org/bindings not in flight; fetching
+105 silly cache add parsed spec Result {
+105 silly cache add   raw: 'nan@2.0.5',
+105 silly cache add   scope: null,
+105 silly cache add   name: 'nan',
+105 silly cache add   rawSpec: '2.0.5',
+105 silly cache add   spec: '2.0.5',
+105 silly cache add   type: 'version' }
+106 silly addNamed nan@2.0.5
+107 verbose addNamed "2.0.5" is a plain semver version for nan
+108 silly mapToRegistry name nan
+109 silly mapToRegistry using default registry
+110 silly mapToRegistry registry https://registry.npmjs.org/
+111 silly mapToRegistry uri https://registry.npmjs.org/nan
+112 verbose addNameVersion registry:https://registry.npmjs.org/nan not in flight; fetching
+113 verbose request uri https://registry.npmjs.org/bindings
+114 verbose request no auth needed
+115 info attempt registry request try #1 at 8:16:01 PM
+116 verbose etag "C703GY7AAJXUO0UMZR0WSP7SV"
+117 http request GET https://registry.npmjs.org/bindings
+118 verbose request uri https://registry.npmjs.org/nan
+119 verbose request no auth needed
+120 info attempt registry request try #1 at 8:16:01 PM
+121 verbose etag "9NBRJS9FUTSYWL0Z7O1C3BM8C"
+122 http request GET https://registry.npmjs.org/nan
+123 http 200 https://registry.npmjs.org/bindings
+124 silly get cb [ 200,
+124 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+124 silly get     etag: '"D2XXGHY5EXANSKX6Q9FJABZ7W"',
+124 silly get     'content-type': 'application/json',
+124 silly get     'cache-control': 'max-age=60',
+124 silly get     'content-length': '18004',
+124 silly get     'accept-ranges': 'bytes',
+124 silly get     date: 'Wed, 09 Sep 2015 03:16:01 GMT',
+124 silly get     via: '1.1 varnish',
+124 silly get     age: '27',
+124 silly get     connection: 'keep-alive',
+124 silly get     'x-served-by': 'cache-lax1426-LAX',
+124 silly get     'x-cache': 'HIT',
+124 silly get     'x-cache-hits': '2',
+124 silly get     'x-timer': 'S1441768561.490666,VS0,VE0',
+124 silly get     vary: 'Accept' } ]
+125 verbose get saving bindings to /Users/lkolla/.npm/registry.npmjs.org/bindings/.cache.json
+126 silly mapToRegistry name bindings
+127 silly mapToRegistry using default registry
+128 silly mapToRegistry registry https://registry.npmjs.org/
+129 silly mapToRegistry uri https://registry.npmjs.org/bindings
+130 verbose addRemoteTarball https://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz not in flight; adding
+131 verbose addRemoteTarball [ 'https://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz',
+131 verbose addRemoteTarball   '14ad6113812d2d37d72e67b4cacb4bb726505f11' ]
+132 info retry fetch attempt 1 at 8:16:01 PM
+133 info attempt registry request try #1 at 8:16:01 PM
+134 http fetch GET https://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz
+135 http 200 https://registry.npmjs.org/nan
+136 silly get cb [ 200,
+136 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+136 silly get     etag: '"BPJTP4NL9ULJIQBBRYQU0Q49"',
+136 silly get     'content-type': 'application/json',
+136 silly get     'cache-control': 'max-age=60',
+136 silly get     'content-length': '97835',
+136 silly get     'accept-ranges': 'bytes',
+136 silly get     date: 'Wed, 09 Sep 2015 03:16:01 GMT',
+136 silly get     via: '1.1 varnish',
+136 silly get     age: '35',
+136 silly get     connection: 'keep-alive',
+136 silly get     'x-served-by': 'cache-lax1432-LAX',
+136 silly get     'x-cache': 'HIT',
+136 silly get     'x-cache-hits': '2',
+136 silly get     'x-timer': 'S1441768561.504614,VS0,VE0',
+136 silly get     vary: 'Accept' } ]
+137 verbose get saving nan to /Users/lkolla/.npm/registry.npmjs.org/nan/.cache.json
+138 silly mapToRegistry name nan
+139 silly mapToRegistry using default registry
+140 silly mapToRegistry registry https://registry.npmjs.org/
+141 silly mapToRegistry uri https://registry.npmjs.org/nan
+142 verbose addRemoteTarball https://registry.npmjs.org/nan/-/nan-2.0.5.tgz not in flight; adding
+143 verbose addRemoteTarball [ 'https://registry.npmjs.org/nan/-/nan-2.0.5.tgz',
+143 verbose addRemoteTarball   '365888014be1fd178db0cbfa258edf7b0cb1c408' ]
+144 info retry fetch attempt 1 at 8:16:01 PM
+145 info attempt registry request try #1 at 8:16:01 PM
+146 http fetch GET https://registry.npmjs.org/nan/-/nan-2.0.5.tgz
+147 http fetch 200 https://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz
+148 silly fetchAndShaCheck shasum 14ad6113812d2d37d72e67b4cacb4bb726505f11
+149 verbose addTmpTarball /var/folders/zm/kphr62fx0_vc1g57gbn69k1dyk_t30/T/npm-10573-32663de2/registry.npmjs.org/bindings/-/bindings-1.2.1.tgz not in flight; adding
+150 verbose addTmpTarball already have metadata; skipping unpack for bindings@1.2.1
+151 silly cache afterAdd bindings@1.2.1
+152 verbose afterAdd /Users/lkolla/.npm/bindings/1.2.1/package/package.json not in flight; writing
+153 verbose afterAdd /Users/lkolla/.npm/bindings/1.2.1/package/package.json written
+154 http fetch 200 https://registry.npmjs.org/nan/-/nan-2.0.5.tgz
+155 silly fetchAndShaCheck shasum 365888014be1fd178db0cbfa258edf7b0cb1c408
+156 verbose addTmpTarball /var/folders/zm/kphr62fx0_vc1g57gbn69k1dyk_t30/T/npm-10573-32663de2/registry.npmjs.org/nan/-/nan-2.0.5.tgz not in flight; adding
+157 verbose addTmpTarball already have metadata; skipping unpack for nan@2.0.5
+158 silly cache afterAdd nan@2.0.5
+159 verbose afterAdd /Users/lkolla/.npm/nan/2.0.5/package/package.json not in flight; writing
+160 verbose afterAdd /Users/lkolla/.npm/nan/2.0.5/package/package.json written
+161 silly install resolved [ { name: 'bindings',
+161 silly install resolved     description: 'Helper module for loading your native module\'s .node file',
+161 silly install resolved     keywords: [ 'native', 'addon', 'bindings', 'gyp', 'waf', 'c', 'c++' ],
+161 silly install resolved     version: '1.2.1',
+161 silly install resolved     author:
+161 silly install resolved      { name: 'Nathan Rajlich',
+161 silly install resolved        email: 'nathan@tootallnate.net',
+161 silly install resolved        url: 'http://tootallnate.net' },
+161 silly install resolved     repository:
+161 silly install resolved      { type: 'git',
+161 silly install resolved        url: 'git://github.com/TooTallNate/node-bindings.git' },
+161 silly install resolved     main: './bindings.js',
+161 silly install resolved     bugs: { url: 'https://github.com/TooTallNate/node-bindings/issues' },
+161 silly install resolved     homepage: 'https://github.com/TooTallNate/node-bindings',
+161 silly install resolved     license: 'MIT',
+161 silly install resolved     gitHead: 'e404152ee27f8478ccbc7122ee051246e8e5ec02',
+161 silly install resolved     _id: 'bindings@1.2.1',
+161 silly install resolved     scripts: {},
+161 silly install resolved     _shasum: '14ad6113812d2d37d72e67b4cacb4bb726505f11',
+161 silly install resolved     _from: 'bindings@1.2.1',
+161 silly install resolved     _npmVersion: '1.4.14',
+161 silly install resolved     _npmUser: { name: 'tootallnate', email: 'nathan@tootallnate.net' },
+161 silly install resolved     maintainers: [ [Object], [Object] ],
+161 silly install resolved     dist:
+161 silly install resolved      { shasum: '14ad6113812d2d37d72e67b4cacb4bb726505f11',
+161 silly install resolved        tarball: 'http://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz' },
+161 silly install resolved     directories: {},
+161 silly install resolved     _resolved: 'https://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz' },
+161 silly install resolved   { name: 'nan',
+161 silly install resolved     version: '2.0.5',
+161 silly install resolved     description: 'Native Abstractions for Node.js: C++ header for Node 0.8->0.12 compatibility',
+161 silly install resolved     main: 'include_dirs.js',
+161 silly install resolved     repository: { type: 'git', url: 'git://github.com/nodejs/nan.git' },
+161 silly install resolved     scripts:
+161 silly install resolved      { test: 'tap --gc test/js/*-test.js',
+161 silly install resolved        'rebuild-tests': 'pangyp rebuild --msvs_version=2013 --directory test',
+161 silly install resolved        docs: 'doc/.build.sh' },
+161 silly install resolved     contributors:
+161 silly install resolved      [ [Object],
+161 silly install resolved        [Object],
+161 silly install resolved        [Object],
+161 silly install resolved        [Object],
+161 silly install resolved        [Object],
+161 silly install resolved        [Object],
+161 silly install resolved        [Object] ],
+161 silly install resolved     devDependencies:
+161 silly install resolved      { bindings: '~1.2.1',
+161 silly install resolved        'node-gyp': '~2.0.2',
+161 silly install resolved        pangyp: '~2.2.0',
+161 silly install resolved        tap: '~0.7.1',
+161 silly install resolved        xtend: '~4.0.0' },
+161 silly install resolved     license: 'MIT',
+161 silly install resolved     gitHead: 'd13a2e9ce762fd130877b53c71d35963fa2cf689',
+161 silly install resolved     bugs: { url: 'https://github.com/nodejs/nan/issues' },
+161 silly install resolved     homepage: 'https://github.com/nodejs/nan#readme',
+161 silly install resolved     _id: 'nan@2.0.5',
+161 silly install resolved     _shasum: '365888014be1fd178db0cbfa258edf7b0cb1c408',
+161 silly install resolved     _from: 'nan@2.0.5',
+161 silly install resolved     _npmVersion: '2.13.3',
+161 silly install resolved     _nodeVersion: '3.0.0',
+161 silly install resolved     _npmUser: { name: 'kkoopa', email: 'bbyholm@abo.fi' },
+161 silly install resolved     maintainers: [ [Object], [Object] ],
+161 silly install resolved     dist:
+161 silly install resolved      { shasum: '365888014be1fd178db0cbfa258edf7b0cb1c408',
+161 silly install resolved        tarball: 'http://registry.npmjs.org/nan/-/nan-2.0.5.tgz' },
+161 silly install resolved     directories: {},
+161 silly install resolved     _resolved: 'https://registry.npmjs.org/nan/-/nan-2.0.5.tgz' } ]
+162 info install bindings@1.2.1 into /work/nodejs/wmt-blogger/node_modules/bcrypt
+163 info install nan@2.0.5 into /work/nodejs/wmt-blogger/node_modules/bcrypt
+164 info installOne bindings@1.2.1
+165 verbose installOne of bindings to /work/nodejs/wmt-blogger/node_modules/bcrypt not in flight; installing
+166 info installOne nan@2.0.5
+167 verbose installOne of nan to /work/nodejs/wmt-blogger/node_modules/bcrypt not in flight; installing
+168 verbose lock using /Users/lkolla/.npm/_locks/bindings-dd7be7c788275e51.lock for /work/nodejs/wmt-blogger/node_modules/bcrypt/node_modules/bindings
+169 verbose lock using /Users/lkolla/.npm/_locks/nan-8ba99e1ef112bffc.lock for /work/nodejs/wmt-blogger/node_modules/bcrypt/node_modules/nan
+170 silly install write writing bindings 1.2.1 to /work/nodejs/wmt-blogger/node_modules/bcrypt/node_modules/bindings
+171 silly install write writing nan 2.0.5 to /work/nodejs/wmt-blogger/node_modules/bcrypt/node_modules/nan
+172 verbose unbuild node_modules/bcrypt/node_modules/bindings
+173 verbose unbuild node_modules/bcrypt/node_modules/nan
+174 silly gentlyRm /work/nodejs/wmt-blogger/node_modules/bcrypt/node_modules/bindings is being purged from base /work/nodejs/wmt-blogger
+175 verbose gentlyRm don't care about contents; nuking /work/nodejs/wmt-blogger/node_modules/bcrypt/node_modules/bindings
+176 verbose tar unpack /Users/lkolla/.npm/bindings/1.2.1/package.tgz
+177 verbose tar unpacking to /work/nodejs/wmt-blogger/node_modules/bcrypt/node_modules/bindings
+178 silly gentlyRm /work/nodejs/wmt-blogger/node_modules/bcrypt/node_modules/bindings is being purged
+179 verbose gentlyRm don't care about contents; nuking /work/nodejs/wmt-blogger/node_modules/bcrypt/node_modules/bindings
+180 silly gentlyRm /work/nodejs/wmt-blogger/node_modules/bcrypt/node_modules/nan is being purged from base /work/nodejs/wmt-blogger
+181 verbose gentlyRm don't care about contents; nuking /work/nodejs/wmt-blogger/node_modules/bcrypt/node_modules/nan
+182 silly gunzTarPerm modes [ '755', '644' ]
+183 verbose tar unpack /Users/lkolla/.npm/nan/2.0.5/package.tgz
+184 verbose tar unpacking to /work/nodejs/wmt-blogger/node_modules/bcrypt/node_modules/nan
+185 silly gentlyRm /work/nodejs/wmt-blogger/node_modules/bcrypt/node_modules/nan is being purged
+186 verbose gentlyRm don't care about contents; nuking /work/nodejs/wmt-blogger/node_modules/bcrypt/node_modules/nan
+187 silly gunzTarPerm modes [ '755', '644' ]
+188 silly gunzTarPerm extractEntry package.json
+189 silly gunzTarPerm extractEntry package.json
+190 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+191 silly gunzTarPerm extractEntry README.md
+192 silly gunzTarPerm extractEntry bindings.js
+193 silly gunzTarPerm extractEntry README.md
+194 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
+195 silly gunzTarPerm extractEntry include_dirs.js
+196 silly gunzTarPerm modified mode [ 'include_dirs.js', 436, 420 ]
+197 silly gunzTarPerm extractEntry nan_converters.h
+198 silly gunzTarPerm modified mode [ 'nan_converters.h', 436, 420 ]
+199 silly gunzTarPerm extractEntry LICENSE.md
+200 silly gunzTarPerm modified mode [ 'LICENSE.md', 436, 420 ]
+201 silly gunzTarPerm extractEntry .dntrc
+202 silly gunzTarPerm modified mode [ '.dntrc', 436, 420 ]
+203 silly gunzTarPerm extractEntry appveyor.yml
+204 silly gunzTarPerm modified mode [ 'appveyor.yml', 436, 420 ]
+205 verbose write writing to /work/nodejs/wmt-blogger/node_modules/bcrypt/node_modules/bindings/package.json
+206 silly gunzTarPerm extractEntry doc/new.md
+207 silly gunzTarPerm modified mode [ 'doc/new.md', 436, 420 ]
+208 silly gunzTarPerm extractEntry doc/.build.sh
+209 silly gunzTarPerm modified mode [ 'doc/.build.sh', 509, 493 ]
+210 silly gunzTarPerm extractEntry doc/buffers.md
+211 silly gunzTarPerm modified mode [ 'doc/buffers.md', 436, 420 ]
+212 silly gunzTarPerm extractEntry doc/callback.md
+213 silly gunzTarPerm modified mode [ 'doc/callback.md', 436, 420 ]
+214 silly gunzTarPerm extractEntry doc/converters.md
+215 silly gunzTarPerm modified mode [ 'doc/converters.md', 436, 420 ]
+216 silly gunzTarPerm extractEntry doc/errors.md
+217 silly gunzTarPerm modified mode [ 'doc/errors.md', 436, 420 ]
+218 info preinstall bindings@1.2.1
+219 verbose readDependencies loading dependencies from /work/nodejs/wmt-blogger/node_modules/bcrypt/node_modules/bindings/package.json
+220 verbose readDependencies loading dependencies from /work/nodejs/wmt-blogger/node_modules/bcrypt/node_modules/bindings/package.json
+221 silly gunzTarPerm extractEntry doc/maybe_types.md
+222 silly gunzTarPerm modified mode [ 'doc/maybe_types.md', 436, 420 ]
+223 silly gunzTarPerm extractEntry doc/methods.md
+224 silly gunzTarPerm modified mode [ 'doc/methods.md', 436, 420 ]
+225 silly install resolved []
+226 verbose about to build /work/nodejs/wmt-blogger/node_modules/bcrypt/node_modules/bindings
+227 info build /work/nodejs/wmt-blogger/node_modules/bcrypt/node_modules/bindings
+228 info linkStuff bindings@1.2.1
+229 silly linkStuff bindings@1.2.1 has /work/nodejs/wmt-blogger/node_modules/bcrypt/node_modules as its parent node_modules
+230 verbose linkBins bindings@1.2.1
+231 verbose linkMans bindings@1.2.1
+232 verbose rebuildBundles bindings@1.2.1
+233 info install bindings@1.2.1
+234 info postinstall bindings@1.2.1
+235 verbose unlock done using /Users/lkolla/.npm/_locks/bindings-dd7be7c788275e51.lock for /work/nodejs/wmt-blogger/node_modules/bcrypt/node_modules/bindings
+236 silly gunzTarPerm extractEntry doc/asyncworker.md
+237 silly gunzTarPerm modified mode [ 'doc/asyncworker.md', 436, 420 ]
+238 silly gunzTarPerm extractEntry doc/node_misc.md
+239 silly gunzTarPerm modified mode [ 'doc/node_misc.md', 436, 420 ]
+240 silly gunzTarPerm extractEntry doc/persistent.md
+241 silly gunzTarPerm modified mode [ 'doc/persistent.md', 436, 420 ]
+242 silly gunzTarPerm extractEntry doc/scopes.md
+243 silly gunzTarPerm modified mode [ 'doc/scopes.md', 436, 420 ]
+244 silly gunzTarPerm extractEntry doc/script.md
+245 silly gunzTarPerm modified mode [ 'doc/script.md', 436, 420 ]
+246 silly gunzTarPerm extractEntry doc/string_bytes.md
+247 silly gunzTarPerm modified mode [ 'doc/string_bytes.md', 436, 420 ]
+248 silly gunzTarPerm extractEntry doc/v8_internals.md
+249 silly gunzTarPerm modified mode [ 'doc/v8_internals.md', 436, 420 ]
+250 silly gunzTarPerm extractEntry doc/v8_misc.md
+251 silly gunzTarPerm modified mode [ 'doc/v8_misc.md', 436, 420 ]
+252 silly gunzTarPerm extractEntry nan.h
+253 silly gunzTarPerm modified mode [ 'nan.h', 436, 420 ]
+254 silly gunzTarPerm extractEntry nan_callbacks.h
+255 silly gunzTarPerm modified mode [ 'nan_callbacks.h', 436, 420 ]
+256 silly gunzTarPerm extractEntry nan_callbacks_12_inl.h
+257 silly gunzTarPerm modified mode [ 'nan_callbacks_12_inl.h', 436, 420 ]
+258 silly gunzTarPerm extractEntry nan_callbacks_pre_12_inl.h
+259 silly gunzTarPerm modified mode [ 'nan_callbacks_pre_12_inl.h', 436, 420 ]
+260 silly gunzTarPerm extractEntry nan_converters_43_inl.h
+261 silly gunzTarPerm modified mode [ 'nan_converters_43_inl.h', 436, 420 ]
+262 silly gunzTarPerm extractEntry nan_converters_pre_43_inl.h
+263 silly gunzTarPerm modified mode [ 'nan_converters_pre_43_inl.h', 436, 420 ]
+264 silly gunzTarPerm extractEntry nan_implementation_12_inl.h
+265 silly gunzTarPerm modified mode [ 'nan_implementation_12_inl.h', 436, 420 ]
+266 silly gunzTarPerm extractEntry nan_implementation_pre_12_inl.h
+267 silly gunzTarPerm modified mode [ 'nan_implementation_pre_12_inl.h', 436, 420 ]
+268 silly gunzTarPerm extractEntry nan_maybe_43_inl.h
+269 silly gunzTarPerm modified mode [ 'nan_maybe_43_inl.h', 436, 420 ]
+270 silly gunzTarPerm extractEntry nan_maybe_pre_43_inl.h
+271 silly gunzTarPerm modified mode [ 'nan_maybe_pre_43_inl.h', 436, 420 ]
+272 silly gunzTarPerm extractEntry nan_new.h
+273 silly gunzTarPerm modified mode [ 'nan_new.h', 436, 420 ]
+274 silly gunzTarPerm extractEntry nan_object_wrap.h
+275 silly gunzTarPerm modified mode [ 'nan_object_wrap.h', 436, 420 ]
+276 silly gunzTarPerm extractEntry nan_persistent_12_inl.h
+277 silly gunzTarPerm modified mode [ 'nan_persistent_12_inl.h', 436, 420 ]
+278 silly gunzTarPerm extractEntry nan_persistent_pre_12_inl.h
+279 silly gunzTarPerm modified mode [ 'nan_persistent_pre_12_inl.h', 436, 420 ]
+280 silly gunzTarPerm extractEntry nan_string_bytes.h
+281 silly gunzTarPerm modified mode [ 'nan_string_bytes.h', 436, 420 ]
+282 silly gunzTarPerm extractEntry nan_weak.h
+283 silly gunzTarPerm modified mode [ 'nan_weak.h', 436, 420 ]
+284 silly gunzTarPerm extractEntry CHANGELOG.md
+285 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 436, 420 ]
+286 silly gunzTarPerm extractEntry tools/package.json
+287 silly gunzTarPerm modified mode [ 'tools/package.json', 436, 420 ]
+288 silly gunzTarPerm extractEntry tools/README.md
+289 silly gunzTarPerm modified mode [ 'tools/README.md', 436, 420 ]
+290 silly gunzTarPerm extractEntry tools/1to2.js
+291 silly gunzTarPerm modified mode [ 'tools/1to2.js', 509, 493 ]
+292 verbose write writing to /work/nodejs/wmt-blogger/node_modules/bcrypt/node_modules/nan/package.json
+293 info preinstall nan@2.0.5
+294 verbose readDependencies loading dependencies from /work/nodejs/wmt-blogger/node_modules/bcrypt/node_modules/nan/package.json
+295 verbose readDependencies loading dependencies from /work/nodejs/wmt-blogger/node_modules/bcrypt/node_modules/nan/package.json
+296 silly install resolved []
+297 verbose about to build /work/nodejs/wmt-blogger/node_modules/bcrypt/node_modules/nan
+298 info build /work/nodejs/wmt-blogger/node_modules/bcrypt/node_modules/nan
+299 info linkStuff nan@2.0.5
+300 silly linkStuff nan@2.0.5 has /work/nodejs/wmt-blogger/node_modules/bcrypt/node_modules as its parent node_modules
+301 verbose linkBins nan@2.0.5
+302 verbose linkMans nan@2.0.5
+303 verbose rebuildBundles nan@2.0.5
+304 info install nan@2.0.5
+305 info postinstall nan@2.0.5
+306 verbose unlock done using /Users/lkolla/.npm/_locks/nan-8ba99e1ef112bffc.lock for /work/nodejs/wmt-blogger/node_modules/bcrypt/node_modules/nan
+307 verbose about to build /work/nodejs/wmt-blogger/node_modules/bcrypt
+308 info build /work/nodejs/wmt-blogger/node_modules/bcrypt
+309 info linkStuff bcrypt@0.8.5
+310 silly linkStuff bcrypt@0.8.5 has /work/nodejs/wmt-blogger/node_modules as its parent node_modules
+311 verbose linkBins bcrypt@0.8.5
+312 verbose linkMans bcrypt@0.8.5
+313 verbose rebuildBundles bcrypt@0.8.5
+314 verbose rebuildBundles [ 'bindings', 'nan' ]
+315 info install bcrypt@0.8.5
+316 verbose unsafe-perm in lifecycle true
+317 info bcrypt@0.8.5 Failed to exec install script
+318 verbose unlock done using /Users/lkolla/.npm/_locks/bcrypt-9bc8369980b84b5b.lock for /work/nodejs/wmt-blogger/node_modules/bcrypt
+319 verbose stack Error: bcrypt@0.8.5 install: `node-gyp rebuild`
+319 verbose stack Exit status 1
+319 verbose stack     at EventEmitter.<anonymous> (/Users/lkolla/.nvm/versions/io.js/v3.1.0/lib/node_modules/npm/lib/utils/lifecycle.js:214:16)
+319 verbose stack     at emitTwo (events.js:87:13)
+319 verbose stack     at EventEmitter.emit (events.js:172:7)
+319 verbose stack     at ChildProcess.<anonymous> (/Users/lkolla/.nvm/versions/io.js/v3.1.0/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+319 verbose stack     at emitTwo (events.js:87:13)
+319 verbose stack     at ChildProcess.emit (events.js:172:7)
+319 verbose stack     at maybeClose (internal/child_process.js:764:16)
+319 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+320 verbose pkgid bcrypt@0.8.5
+321 verbose cwd /work/nodejs/wmt-blogger
+322 error Darwin 14.5.0
+323 error argv "/Users/lkolla/.nvm/versions/io.js/v3.1.0/bin/iojs" "/Users/lkolla/.nvm/versions/io.js/v3.1.0/bin/npm" "install" "bcrypt"
+324 error node v3.1.0
+325 error npm  v2.14.0
+326 error code ELIFECYCLE
+327 error bcrypt@0.8.5 install: `node-gyp rebuild`
+327 error Exit status 1
+328 error Failed at the bcrypt@0.8.5 install script 'node-gyp rebuild'.
+328 error This is most likely a problem with the bcrypt package,
+328 error not with npm itself.
+328 error Tell the author that this fails on your system:
+328 error     node-gyp rebuild
+328 error You can get their info via:
+328 error     npm owner ls bcrypt
+328 error There is likely additional logging output above.
+329 verbose exit [ 1, true ]
+330 verbose unbuild node_modules/bcrypt
+331 info preuninstall bcrypt@0.8.5
+332 info uninstall bcrypt@0.8.5
+333 verbose unbuild rmStuff bcrypt@0.8.5 from /work/nodejs/wmt-blogger/node_modules
+334 info postuninstall bcrypt@0.8.5
+335 silly gentlyRm /work/nodejs/wmt-blogger/node_modules/bcrypt is being purged from base /work/nodejs/wmt-blogger
+336 verbose gentlyRm don't care about contents; nuking /work/nodejs/wmt-blogger/node_modules/bcrypt
+337 silly vacuum-fs purging /work/nodejs/wmt-blogger/node_modules/bcrypt
+338 silly vacuum-fs quitting because other entries in /work/nodejs/wmt-blogger/node_modules

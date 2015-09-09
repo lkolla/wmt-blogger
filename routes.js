@@ -34,9 +34,10 @@ app.post('/signup',  passport.authenticate('local-signup', {
 	failureFlash:true
 })) // '/adduser' route end.
 
-app.get('/blogpost',  (req, res) => {
+app.get('/blogpost/:blogId',  (req, res) => {
 	res.render('post.ejs', {
 		user:req.user,
+		blogId:req.params.blogId,
 		message:req.flash('error')})
 }) // '/blogpost' route end.
 
@@ -52,15 +53,29 @@ app.get('/editpost/:postId', Operations.findPost, (req, res) => {
 	res.render('editpost.ejs', {
 		user:req.user,
 		post:req.post,
+		comments:req.comments,
 		message:req.flash('error')})
+
+}) // '/blogpost' route end.
+
+app.get('/deletepost/:postId', Operations.deletePost, (req, res) => {
+
+	res.redirect(`/profile`)
 
 }) // '/blogpost' route end.
 
 app.post('/editpost/:postId', Operations.savePost, (req, res) => {
 
-	res.redirect(`/profile`);
+	res.redirect(`/profile`)
 
 }) // '/blogpost' route end.
+
+app.post('/addcomment', Operations.addComment, (req, res) => {
+
+	res.redirect(`/editpost/${req.body.postId}`)
+
+}) // '/blogpost' route end.
+
 
 
 app.get('/createblog',  (req, res) => {
@@ -82,6 +97,7 @@ app.get('/blog/:blogId', Operations.findBlog,  (req, res) => {
 		user:req.user,
 		blogCreator:req.blogCreator,
 		blog:req.blog,
+		posts:req.posts,
 		message:req.flash('error')
 	})
 }) // '/createblog' route end.
@@ -92,6 +108,7 @@ app.get('/profile', Operations.findBlogsAndPosts, (req, res) => {
 		user:req.user,
 		blogs:req.blogs,
 		posts:req.posts,
+		comments:req.comments,
 		message:req.flash('error')
 	})
 })

@@ -46,6 +46,36 @@
 
     <hr>
 
+    <div class="well">
+        <h3><span class="fa fa-laptop"></span>Comments</h3>
+            
+             <% for (var comment in comments) { %>
+             <ul class="list-inline">
+                <li><%= comments[comment].comments %><br></li>
+                <li><%= comments[comment].createdDate %> <br></li>
+            </ul>                      
+            <% } %>
+            
+    </div>
+
+
+    <hr>
+
+    <form id="commentForm" method="post" action="/addcomment">
+        <h3> Required </h3>
+        <div class="form-group">
+            <label>Comments</label>
+            <input type="text" class="form-control" name="comments">
+        </div>
+        
+
+        <input type="hidden" name="userId" value="<%=user._id%>">
+        <input type="hidden" name="postId" value="<%=post._id%>">
+
+
+        <button type="submit" class="btn btn-warning btn-lg" name="post" onclick="submitCommentForm()">Post</button>
+    </form>
+
     <p>Back to <a href="/profile">home</a></p>
 
 </div>
@@ -55,6 +85,12 @@
     {   
         //document.getElementById('postForm').action = action
         document.getElementById('postForm').submit()
+    }
+
+        function submitForm()
+    {   
+        //document.getElementById('postForm').action = action
+        document.getElementById('commentForm').submit()
     }
 </script>
 </body>

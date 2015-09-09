@@ -14,28 +14,34 @@
 
 <div class="col-sm-6 col-sm-offset-3">
 
-    <h1><span class="fa fa-sign-in"></span><%= blog.title %></h1>
+    <h3><span class="fa fa-sign-in"></span><%= blog.title %></h3>
+
 
     <% if (typeof message !== 'undefined' && message.length > 0) { %>
         <div class="alert alert-danger"><%= message %></div>
     <% } %>
 
         <div class="form-group">
-            <label>Blog Title</label>
-            <label><%= blog.title %></label>
-        </div>
-        
-        <div class="form-group">
-            <label>Blog description</label>
-            <label><%= blog.description %></label>
-        </div>
-
-        <div class="form-group">
             <label>Created By</label>
             <label><%= blogCreator.firstname %></label>
         </div>
-
+    <a href="/blogpost/<%= blog._id %>" class="btn btn-default btn-sm">Create Post</a>
     <hr>
+
+    <div class="well">
+            <h3><span class="fa fa-laptop"></span> My Posts</h3>
+                
+                 <% for (var post in posts) { %>
+                 <ul class="list-inline">
+                    <li><%= posts[post].title %><br></li>
+                    <li><%= posts[post].content %> <br></li>
+                    <li><%= posts[post].image %> <br></li>
+                    <li><a href="/editpost/<%= posts[post]._id%>" class="btn btn-default btn-sm">Edit</a>   <br></li>
+                </ul>                      
+                <% } %>
+                
+    </div>
+
 
     <p>Back to <a href="/profile">home</a></p>
 

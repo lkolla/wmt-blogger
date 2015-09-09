@@ -15,7 +15,9 @@
         <h1><span class="fa fa-user"></span> Page </h1>
         <a href="/logout" class="btn btn-default btn-sm">Logout</a>
         <a href="/createblog" class="btn btn-default btn-sm">Create Blog</a>
-        <a href="/blogpost" class="btn btn-default btn-sm">Post</a>
+        <% if(blogs && blogs.length > 0) { %>
+        <a href="/blogpost/<%= blogs[0]._id%>" class="btn btn-default btn-sm">Post</a>
+        <% } %>
     </div>
 
     <% if (typeof message !== 'undefined' && message.length > 0) { %>
@@ -41,7 +43,8 @@
                 
                  <% for (var blog in blogs) { %>
                  <ul class="list-inline">
-                    <li><%= blogs[blog].title %><br></li>
+                    <li>
+                    <li><a href="/blog/<%= blogs[blog]._id%>" class="btn btn-default btn-sm"><%= blogs[blog].title %></a></li>
                     <li><%= blogs[blog].description%> <br></li>
                 </ul>                                      
                 <% } %>
@@ -55,7 +58,23 @@
                  <ul class="list-inline">
                     <li><%= posts[post].title %><br></li>
                     <li><%= posts[post].content %> <br></li>
+                    <li><%= posts[post].image %> <br></li>
+                    <li><%= posts[post].createdDate %> <br></li>
                     <li><a href="/editpost/<%= posts[post]._id%>" class="btn btn-default btn-sm">Edit</a>   <br></li>
+                    <li><a href="/deletepost/<%= posts[post]._id%>" class="btn btn-default btn-sm">Delete</a>   <br></li>
+
+                </ul>                      
+                <% } %>
+                
+        </div>
+
+        <div class="well">
+            <h3><span class="fa fa-laptop"></span> My Comments</h3>
+                
+                 <% for (var comment in comments) { %>
+                 <ul class="list-inline">
+                    <li><%= comments[comment].comments %><br></li>
+                    <li><%= comments[comment].createdDate %> <br></li>
                 </ul>                      
                 <% } %>
                 
