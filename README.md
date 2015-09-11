@@ -4,6 +4,8 @@ Blogger Site built in nodejs
 ![Walkthrough Image -2](https://github.com/lkolla/wmt-blogger/blob/master/wmt-blogger-login.gif)
 
 
+Total Time: 32 Hours
+
 - [x] Signup
 - [x] Login
 - [x] Toolbar
