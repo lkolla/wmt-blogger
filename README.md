@@ -1,4 +1,12 @@
 # wmt-blogger
+
+- [x] Implemented HTTP Server which will be listening on 8000 for CRUD operations on server file system.
+
+![Walkthrough Image -1](https://github.com/lkolla/wmt-blogger/blob/master/wmt-blogger.gif)
+![Walkthrough Image -2](https://github.com/lkolla/wmt-blogger/blob/master/wmt-blogger-login.gif)
+
+
+
 Blogger Site built in nodejs
 
 Completed:
